@@ -239,6 +239,7 @@ body {
   color: #1b9e7c;
 }
 
+/*global style to add red asterisk to required fields which would apply to email label. */
 .required {
   color: #dc3545;
 }

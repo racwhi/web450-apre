@@ -48,7 +48,9 @@ import { environment } from '../../../../environments/environment';
       <a class="link link--secondary" routerLink="/user-management/users">Return</a>
     </div>
   `,
-  styles: ``
+  styles: `
+   
+  `
 })
 export class UserCreateComponent {
   errorMessage: string;
