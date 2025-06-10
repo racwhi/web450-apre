@@ -78,4 +78,46 @@ router.get('/regions/:region', (req, res, next) => {
   }
 });
 
+//Sales by channel report
+router.get("/sales-by-channel", (req, res, next) => {
+  try {
+    const channel = req.query.channel;
+
+    if (!channel) {
+      return res.status(400).send("Channel parameter is missing");
+    }
+
+    mongo(async (db) => {
+      const salesByChannel = await db
+        .collection("sales")
+        .aggregate([
+          {
+            $match: {
+              channel: channel,
+            },
+          },
+
+          {
+            $project: {
+
+              id: 0,
+              region: 1,
+              product: 1,
+              category: 1,
+              customer: 1,
+              salesperson: 1,
+              channel: 1,
+              amount: 1,
+            },
+          },
+        ])
+        .toArray();
+
+      res.send(salesByChannel);
+    }, next);
+  } catch (err) {
+    console.error("Error getting sales data by channel: ", err);
+  }
+}); 
+
 module.exports = router;
