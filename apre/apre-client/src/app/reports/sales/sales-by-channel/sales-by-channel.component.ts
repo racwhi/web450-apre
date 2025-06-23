@@ -37,9 +37,6 @@ import { environment } from "../../../../environments/environment";
           [title]="'Sales through ' + selectedChannelName + ' Channel'"
           [data]="salesData"
           [headers]="[
-            'region',
-            'product',
-            'category',
             'salesperson',
             'channel',
             'amount'
@@ -87,3 +84,4 @@ export class SalesByChannelComponent {
       });
   }
 }
+//http://localhost:3000/api/reports/sales/sales-by-channel?channel=Online

@@ -357,7 +357,7 @@ export class MainLayoutComponent {
       name: "Agent Performance by Region",
       url: "/reports/agent-performance/performance-by-region",
     },
-    
+
     // Add more reports as needed
   ];
 
@@ -365,6 +365,10 @@ export class MainLayoutComponent {
     {
       name: "Channel Rating by Month",
       url: "/reports/customer-feedback/channel-rating-by-month",
+    },
+    {
+      name: "Customer Feedback by Customer",
+      url: "/reports/customer-feedback/feedback-by-customer"
     },
     // Add more reports as needed
   ];
